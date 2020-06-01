@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Introduction page for Handbell Stadium">
+    <meta name="author" content="Graham John">
+    <link rel="icon" href="images/handbellpair.png">
+
+    <title>Handbell Stadium</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="index.html">Handbell Stadium</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="downloads.html">Downloads</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="prerequisites.html">Prerequisites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="solopractice.html">Solo Practice</a>
+          </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ringingonline.html">Ringing Online</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="otherfeatures.html">Other Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="technical.html">Technical Information</a>
+        </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <main role="main">
+      <div class="container">
+        <br>
+        <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+          <h1 class="display-5 text-center">A new simulator for change ringing on handbells</h1>
+          <h2 class="display-5 text-center">by Graham John</h2>
+          <p class="text-center">Printed in <a href="https://bb.ringingworld.co.uk/issues/2020/452">The Ringing World No 5689, 8 May 2020, page 452</a>.</p>
+        </div>
+        
+<p>The combined prospect of not being able to ring towerbells or handbells for some time and reading endless discussion on the shortcomings of video
+conferencing platforms on ringing forums started me thinking about what technology we could develop for online ringing.</p>
+<p>Fortunately, my son Ted, who is a non-ringer but a brilliant software developer, had just moved back in with us at the start of lockdown while
+his kitchen was being refitted, and has been living and working from home with us since.</p>
+<p>The concept was a simulator dedicated to change ringing on handbells that would allow ringing over the internet that could meet the performance
+norms set out by the Central Council in its Framework for Method Ringing. In other words, any peal length performances rung on it would be counted
+in the Council's Annual statistics as Peals on Simulators (something the Council voted to include in 2017). For handbells, this means that all bells
+must be controlled by human ringers ringing up and down strokes, and conversely none of the bells can be controlled by the computer and none of the
+ringers can be pressing computer keys to ring the bells.</p>
+<p>Ten years ago, Ted had helped me develop Handbell Manager, an interface to simulators such as Abel and BelTower, that allowed USB connected motion
+controllers to sound the bells when they are swung up and down. I arranged to import suitable controllers, manufactured by a US Company, ActionXL,
+and sell them on at cost to UK ringers. Since then over 450 pairs of controllers have been acquired by ringers for use with Handbell Manager, which
+in the last couple of weeks has been adapted to work with both Ringing Room and Muster by Richard Johnston, Adrian Nash and Mike Pidd.</p> 
+<p>The new simulator is called Handbell Stadium, and one of its principle requirements is to overcome the lag experienced when trying to use video
+conferencing to ring over the internet. While Skype, Zoom, Teams etc are very good for their intended purpose, they prevent feedback from speaker
+to microphone by automatically muting those not talking, and suffer significant lag. Of course, this is not at all useful when you need to hear all
+of the bells at the same time, or when a bob is inadvertently silenced by the technology.</p>
+<p>One way of overcoming the latency experienced in video conferencing is by getting each ringer's computer to send swing and strike signals
+(which are much smaller messages than video) from motion controllers to a server using a single direction messaging protocol called UDP.
+The server then forwards that information to the other ringers' computers, which converts the signals back to visuals and plays recorded handbell
+sounds at the strike point. Provided that the ringers have good internet connections, we found that the signals could be transmitted in less than
+20 milliseconds, which should give reasonable results.</p>
+<p>In order to hear the conductor and other ringers, a standard voice channel is required. The most suitable platform for this is Discord, a service
+specifically created for gamers and streamers to communicate in real time. Actually, any communications platform would be suitable for this aspect,
+but Discord has the ability to create dedicated channels for each band that are always on and available, yet prevent others joining once the
+designated band is complete. It’s a bit like being locked out by a peal band meeting to ring Major, when you are the ninth ringer to turn up!</p>
+<p>The prototype version of Handbell Stadium has two-dimensional handbell graphics (using images borrowed from Abel) in a line that swing as the
+ringers move their controllers, and the first quarter peal successfully rung using this app was by four ringers in three locations.</p>
+<div class="row">
+<div class="col-4 align-self-center">
+  <div><b>Handbell Stadium</b>, England</div>
+  <div>Monday, 13 April 2020 in 47m</div> 
+  <div><b>1250 Yorkshire Surprise Major</b></div>
+  <div>1–2 Lesley H M Boyle (Reach)</div> 
+  <div>3–4 Gareth Davies (Reach)</div>  
+  <div>5–6 Graham A C John (C - Brimpton)</div> 
+  <div>7–8 Simon Humphrey (Wetton)</div>  
+  <div><p><i>First quarter on the platform.</i></p></div>  
+</div>
+<div class="col-8"><img src="images/hbstadium_20200413.png" class="rounded float-left" width="100%" alt="Handbell Stadium 2D">
+  <p class="text-center"><i>Two-dimensional ringing from three locations</i></p></div>
+</div>
+<p>This worked pretty well, but for a handbell quarter, 47 minutes is quite slow. There may be a number of reasons for this: unfamiliarity and
+caution, insufficient visual cues, motion controller simulation not being sufficiently precise, and any lag caused by latency at any point in
+the system. Tricky problems to address, but with further investigation, experimentation, and practice on the platform, all of these factors
+may be improved.</p>
+<p>Of particular interest is the graphics. I have never found 2D graphics for practising handbells very satisfactory. They do not give you
+the equivalent of ropesight on handbells as the perspective is all wrong. Having tried the Abel style graphics with the bells in a circle, 
+I thought I would try the bells in a straight line so you can see exactly which bells are up and down at a glance. It does introduce the
+problem of your own pair being a mirror image, but I corrected this by providing a point-of-view option that hides your own bells and rotates
+the others to the correct position around you. Nevertheless, I really wanted something better.</p>
+<p>Always keen to try out new technologies, Ted downloaded the development environment of a 3D gaming platform called Unity and started to
+develop a full 3D model of a swinging handbell complete with swinging clapper. These were then programmatically replicated and placed in a
+circle on chairs in a 3D room. Your perspective is a camera view, and the camera can be moved anywhere within the room. The bells can be
+controlled by the ringers swinging motion controllers to simulate the up/down movement of real handbells in the same way as the 2D model,
+or in practice mode the computer can ring the remaining bells while you ring a pair. Of course, with Ted’s help, I then had to learn how
+to use and program for it too, as well as get to grips with Euler angles and quaternions!</p>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+<img src="images/handbellstadium3d.jpg" class="rounded float-left" width="100%" alt="Handbell Stadium 3D">
+  <p class="text-center"><i>Three-dimensional ringing in the basement</i></p></div>
+  <div class="col-2"></div>
+</div>
+<p>The "ropesight" effect you get with the 3D model is incredible! Suddenly, it is just like sitting in a room with other handbell ringers,
+and picking out your place among the other bells is just the same as in reality. A project that started purely because of circumstances has
+turned into something that could revolutionise handbell practice and performance well after we return to some form of normality. You can see
+the 3D graphics prototype in action below.</p>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+      <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ey4JPX436b4?rel=0" allowfullscreen></iframe>
+    </div>
+    <p class="text-center"><i>Three-dimensional ringing prototype with computer-controlled bells</i></p></div>
+  </div>
+  <div class="col-2"></div>
+</div>
+  <hr>
+
+</div> <!-- /container -->
+
+    </main>
+
+    <footer class="container">
+      <p>&copy; Graham John 2020</p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
