@@ -59,8 +59,46 @@
         <br>
         <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto">
           <h1 class="display-4 text-center">Technical Information</h1>
+          <p class="lead text-center">The following sections describe some technical background to some aspects of how Handbell Stadium works.</p>
         </div> 
-  <hr>
+        <h3>Ping Balancing</h3>
+        <p>One of the issues we experienced when testing Handbell Stadium was that we found it difficult to get a good rhythm, even with experienced handbell ringers, 
+          and as a result we tended to ring much slower to ensure separation of the bells. In normal ringing, we very
+          quickly become accustomed to larger bells having a slower swing and naturally compensate to get a good rhythm. The problem with ringing
+          over the internet is therefore not so much that there is a delay, because we can adjust to that, but it is the variability of delay that
+          is the issue because that is impossible to compensate for. 
+        </p>
+        <p>To help address this issue, a feature called "ping balancing" has been developed. The aim of this is to take the delays in transmission to
+          each ringer and make them all the same. This is achieved by first synchronising the clocks on each ringer's computer to the server (this is
+          a simplification as it is a timer in the Handbell Stadium program that is synchronised - the computer's clock is not adjusted). Then the 
+          exact time of each strike is transmitted via the server to all the other ringers' computers. The recipient computer will only play that
+          strike when its own clock has reached the strike time plus the ping balancing delay. The length of the ping balancing delay is automatically and 
+          continuously calculated by Handbell Stadium to give good results based upon the ping times of the participants. 
+        </p>
+        <p>While this still means that ringing on the internet will be slower than normal, the improved consistency means that the ringers can establish
+          a better rhythm. This allows greater anticipation to ring the bells closer together resulting in faster ringing.
+        </p>
+        <p>The diagrams below explain the process in more detail.</p>
+        <div class="row">
+          <div class="col-12">
+            <img src="images/pingbal1.png" class="rounded float-left" width="100%" alt="Ping Balancing diagram 1">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <img src="images/pingbal2.png" class="rounded float-left" width="100%" alt="Ping Balancing diagram 2">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <img src="images/pingbal3.png" class="rounded float-left" width="100%" alt="Ping Balancing diagram 3">
+          </div>
+        <div class="row">
+          <div class="col-12">
+            <img src="images/pingbal4.png" class="rounded float-left" width="100%" alt="Ping Balancing diagram 4">
+          </div>
+        </div>
+      <hr>
 
 </div> <!-- /container -->
 
